@@ -35,10 +35,10 @@ var player
 if (roomIdFromUrl) { // If roomId exists in the URL
     joinRoom(roomIdFromUrl); // Call joinRoom with the extracted roomId
 var player = 'player2';
-    console.log(player);
+    console.log("your player name is "+player);
 }else{
 var player = 'player1';
-  console.log(player);
+  console.log("your player name is "+player);
 }
 // BUTTON LISTENER ============================================================
 connectButton.addEventListener('click', () => {
