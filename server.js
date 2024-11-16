@@ -49,7 +49,7 @@ io.on('connection', (socket) => {
   })
   socket.on('send_message', (data) => {
     socket.to(data.roomId).emit('receive_message', {
-        sender: player, // You can replace this with the actual user identifier
+        sender: 'User', // You can replace this with the actual user identifier
         message: data.message,
     });
   });
