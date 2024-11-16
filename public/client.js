@@ -29,7 +29,12 @@ const iceServers = {
     { urls: 'stun:stun4.l.google.com:19302' },
   ],
 }
+const urlParams = new URLSearchParams(window.location.search);
+const roomIdFromUrl = urlParams.get('roomId'); // Extract roomId from URL
 
+if (roomIdFromUrl) { // If roomId exists in the URL
+    joinRoom(roomIdFromUrl); // Call joinRoom with the extracted roomId
+}
 // BUTTON LISTENER ============================================================
 connectButton.addEventListener('click', () => {
   joinRoom(roomInput.value)
