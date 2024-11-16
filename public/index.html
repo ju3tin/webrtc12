@@ -56,12 +56,13 @@
     <div id="video-chat-container" class="video-position" style="display: none">
       <video id="local-video" autoplay="autoplay" muted="muted"></video>
       <video id="remote-video" autoplay="autoplay"></video>
+      <div style="z-index: 200;" id="message-container"></div>
+<input style="z-index: 200;" type="text" id="message-input" placeholder="Type a message..." />
+<button style="z-index: 200;" id="send-message-button">Send</button>
     </div>
 
     <!-- Add this to your HTML file -->
-<div id="message-container"></div>
-<input type="text" id="message-input" placeholder="Type a message..." />
-<button id="send-message-button">Send</button>
+
 
     <script src="/socket.io/socket.io.js"></script>
     <script type="text/javascript" src="client.js"></script>
