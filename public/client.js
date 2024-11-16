@@ -31,9 +31,14 @@ const iceServers = {
 }
 const urlParams = new URLSearchParams(window.location.search);
 const roomIdFromUrl = urlParams.get('roomId'); // Extract roomId from URL
-
+var player
 if (roomIdFromUrl) { // If roomId exists in the URL
     joinRoom(roomIdFromUrl); // Call joinRoom with the extracted roomId
+    player = 'player2';
+    console.log(player);
+}else{
+  player = 'player1';
+  console.log(player);
 }
 // BUTTON LISTENER ============================================================
 connectButton.addEventListener('click', () => {
