@@ -47,6 +47,13 @@ io.on('connection', (socket) => {
     console.log(`Broadcasting webrtc_ice_candidate event to peers in room ${event.roomId}`)
     socket.to(event.roomId).emit('webrtc_ice_candidate', event)
   })
+  socket.on('send_message', (data) => {
+    socket.to(data.roomId).emit('receive_message', {
+        sender: 'User', // You can replace this with the actual user identifier
+        message: data.message,
+    });
+  });
+
 })
 
 // START THE SERVER =================================================================

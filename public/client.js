@@ -178,3 +178,33 @@ function sendIceCandidate(event) {
     })
   }
 }
+// ... existing code ...
+
+// DOM elements for messaging
+const messageInput = document.getElementById('message-input');
+const sendMessageButton = document.getElementById('send-message-button');
+const messageContainer = document.getElementById('message-container');
+
+// BUTTON LISTENER FOR SENDING MESSAGES =====================================
+sendMessageButton.addEventListener('click', () => {
+    const message = messageInput.value;
+    if (message) {
+        socket.emit('send_message', { roomId, message }); // Send message to the server
+        displayMessage(`You: ${message}`); // Display your own message
+        messageInput.value = ''; // Clear the input field
+    }
+});
+
+// SOCKET EVENT FOR RECEIVING MESSAGES =====================================
+socket.on('receive_message', (data) => {
+    displayMessage(`${data.sender}: ${data.message}`); // Display received message
+});
+
+// FUNCTION TO DISPLAY MESSAGES ============================================
+function displayMessage(message) {
+    const messageElement = document.createElement('div');
+    messageElement.textContent = message;
+    messageContainer.appendChild(messageElement);
+}
+
+// ... existing code ...
