@@ -231,7 +231,7 @@ function timer3(){
     
    //   document.getElementById('onctent1').id = 'two';
    //   openNav();
-     // alert(counter);
+   alert('timer done');
    //   doSomething();
       
     } else {
