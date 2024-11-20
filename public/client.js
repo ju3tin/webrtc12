@@ -212,4 +212,35 @@ function displayMessage(message) {
     messageContainer.appendChild(messageElement);
 }
 
+
+function timer3(){
+
+  var timeLeft = 30;
+  var elem = document.getElementById('Timer');
+  
+  
+  document.getElementById('onctent2').id = 'onctent1';
+  
+  var timerId = setInterval(countdown, 1000);
+  
+  function countdown(counter, results, value1) {
+    if (timeLeft == 0) {
+      clearTimeout(timerId);
+   //   document.getElementById("onctent1").innerHTML = "";
+  //value1 = counter;
+    
+      document.getElementById('onctent1').id = 'two';
+      openNav();
+     // alert(counter);
+      doSomething();
+      
+    } else {
+      elem.innerHTML = timeLeft + ' seconds remaining';
+      timeLeft--;
+    }
+  }
+  
+  }
+  
+
 // ... existing code ...
