@@ -219,7 +219,7 @@ function timer3(){
   var elem = document.getElementById('Timer');
   
   
-  document.getElementById('onctent2').id = 'onctent1';
+  //document.getElementById('onctent2').id = 'onctent1';
   
   var timerId = setInterval(countdown, 1000);
   
@@ -229,10 +229,10 @@ function timer3(){
    //   document.getElementById("onctent1").innerHTML = "";
   //value1 = counter;
     
-      document.getElementById('onctent1').id = 'two';
-      openNav();
+   //   document.getElementById('onctent1').id = 'two';
+   //   openNav();
      // alert(counter);
-      doSomething();
+   //   doSomething();
       
     } else {
       elem.innerHTML = timeLeft + ' seconds remaining';
